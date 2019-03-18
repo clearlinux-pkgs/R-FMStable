@@ -4,7 +4,7 @@
 #
 Name     : R-FMStable
 Version  : 0.1.2
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/FMStable_0.1-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/FMStable_0.1-2.tar.gz
 Summary  : Finite Moment Stable Distributions
