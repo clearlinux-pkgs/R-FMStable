@@ -4,7 +4,7 @@
 #
 Name     : R-FMStable
 Version  : 0.1.2
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/FMStable_0.1-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/FMStable_0.1-2.tar.gz
 Summary  : Finite Moment Stable Distributions
@@ -12,7 +12,6 @@ Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-FMStable-lib = %{version}-%{release}
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 with log maximally skew stable distributions, which are also
@@ -28,21 +27,22 @@ lib components for the R-FMStable package.
 
 %prep
 %setup -q -c -n FMStable
+cd %{_builddir}/FMStable
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571831102
+export SOURCE_DATE_EPOCH=1589519818
 
 %install
-export SOURCE_DATE_EPOCH=1571831102
+export SOURCE_DATE_EPOCH=1589519818
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
